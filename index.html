@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#050507">
+  <meta name="description" content="Owitok - short videos, big vibes">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <title>Owitok</title>
+</head>
+<body>
+  <div id="splash"><div class="brand-mark">✦</div><h1>Owitok</h1><p>SHORT VIDEOS • BIG VIBES</p></div>
+
+  <main class="app">
+    <header class="topbar">
+      <div class="mini-brand"><span class="brand-mark small">✦</span> Owitok</div>
+      <div class="feed-tabs"><button class="tab active" data-tab="for-you">For You</button><button class="tab" data-tab="following">Following</button></div>
+      <button class="icon-btn" id="open-search" aria-label="Search">⌕</button>
+    </header>
+
+    <section id="feed-screen" class="screen active">
+      <div id="feed-list" class="feed-list"></div>
+    </section>
+
+    <section id="search-screen" class="screen">
+      <div class="search-page">
+        <div class="search-box"><span>⌕</span><input id="search-input" placeholder="Search videos, users or hashtags"></div>
+        <h2>Discover</h2>
+        <div id="search-results" class="cards"></div>
+      </div>
+    </section>
+
+    <section id="create-screen" class="screen">
+      <div class="page"><h2>Create</h2>
+        <div class="create-actions">
+          <label class="big-action">＋ Upload video<input id="video-picker" type="file" accept="video/*" hidden></label>
+          <button class="big-action" id="camera-btn">◉ Record with camera</button>
+        </div>
+        <video id="camera-preview" class="camera-preview" autoplay playsinline muted hidden></video>
+        <p class="muted">Videos uploaded here are stored locally on this device in Version 1. A real multi-user upload system comes with the backend stage.</p>
+      </div>
+    </section>
+
+    <section id="inbox-screen" class="screen"><div class="page"><h2>Inbox</h2><div class="empty-card">No notifications yet.</div></div></section>
+
+    <section id="profile-screen" class="screen">
+      <div class="page profile">
+        <div class="profile-head"><div class="avatar">O</div><div><h2 id="profile-name">Owitok User</h2><p id="profile-handle">@owitok_user</p></div></div>
+        <p id="profile-bio" class="muted">Your Owitok profile.</p>
+        <div class="stats"><span><b id="video-count">0</b><small>Videos</small></span><span><b>0</b><small>Followers</small></span><span><b>0</b><small>Following</small></span></div>
+        <button class="outline-btn" id="edit-profile">Edit profile</button>
+        <div id="profile-grid" class="profile-grid"></div>
+      </div>
+    </section>
+
+    <section id="settings-screen" class="screen"><div class="page"><h2>Settings</h2>
+      <div class="settings-list">
+        <button>Account</button><button>Privacy</button><button>Security</button><button>Notifications</button>
+        <label>Data Saver <input id="data-saver" type="checkbox"></label>
+        <label>Dark Mode <input id="dark-mode" type="checkbox" checked></label>
+        <button>Help & Support</button><button>About Owitok</button>
+      </div>
+    </div></section>
+
+    <nav class="bottom-nav">
+      <button data-screen="feed-screen" class="nav active">⌂<small>Home</small></button>
+      <button data-screen="search-screen" class="nav">⌕<small>Discover</small></button>
+      <button data-screen="create-screen" class="nav plus">＋</button>
+      <button data-screen="inbox-screen" class="nav">♡<small>Inbox</small></button>
+      <button data-screen="profile-screen" class="nav">◯<small>Profile</small></button>
+    </nav>
+  </main>
+
+  <div id="comments-modal" class="modal" hidden><div class="modal-card"><button id="close-comments" class="close">×</button><h3>Comments</h3><div id="comments-list"></div><div class="comment-entry"><input id="comment-input" placeholder="Add a comment"><button id="send-comment">Send</button></div></div></div>
+  <div id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>

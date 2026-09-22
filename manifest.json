@@ -1,0 +1,10 @@
+{
+  "name":"Owitok",
+  "short_name":"Owitok",
+  "start_url":"./index.html",
+  "display":"standalone",
+  "background_color":"#050507",
+  "theme_color":"#050507",
+  "description":"Owitok - short videos, big vibes",
+  "icons":[]
+}
